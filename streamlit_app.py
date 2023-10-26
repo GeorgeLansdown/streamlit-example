@@ -5,6 +5,9 @@ import pandas as pd
 import streamlit as st
 import requests
 
+def filter_output(output):
+    return " ".join(re.findall(r"content\":\" ([^\"]*)", text))
+
 def send_prompt(prompt):
     headers = {
         'authority': 'api.popai.pro',
@@ -46,7 +49,8 @@ def send_prompt(prompt):
 text = st.text_input("Enter PDF URL")
 
 if st.button("Go!"):
-    st.write(send_prompt("Summarise the main points of the article in a list format:"))
+    output = send_prompt("Summarise the main points of the article in a list format:")
+    st.write(filter_output(output))
 
 
 
