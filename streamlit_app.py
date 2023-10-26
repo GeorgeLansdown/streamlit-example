@@ -14,6 +14,9 @@ first_time = True
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
 
+if 'first' not in st.session_state:
+    st.session_state.first = True
+
 st.title("""
 Welcome to CanonPDF!
 """)
@@ -27,11 +30,11 @@ button = st.button("Upload!", on_click=click_button)
     
 
 if st.session_state.clicked:
-    if first_time:
+    if st.session_state.first:
         with st.spinner(text="In progress..."):
             time.sleep(random.randint(1, 3))
         st.write("Uploaded!")
-        first_time = False
+        st.session_state.first = False
 
     st.divider()
 
