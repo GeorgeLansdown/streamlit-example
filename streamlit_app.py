@@ -9,9 +9,12 @@ import time
 import random
 
 st.set_page_config(layout="wide")
+for key in st.session_state.keys():
+    del st.session_state[key]
+
 
 st.title("""
-# Welcome to CanonPDF!
+Welcome to CanonPDF!
 """)
 
 if 'clicked' not in st.session_state:
