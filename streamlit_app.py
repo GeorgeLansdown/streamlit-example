@@ -10,13 +10,12 @@ import random
 
 st.set_page_config(layout="wide")
 
+if 'clicked' not in st.session_state:
+    st.session_state.clicked = False
 
 st.title("""
 Welcome to CanonPDF!
 """)
-
-if 'clicked' not in st.session_state:
-    st.session_state.clicked = False
 
 text = st.text_input("Enter PDF URL")
 
@@ -24,14 +23,14 @@ def click_button():
     st.session_state.clicked = True
 
 button = st.button("Upload!", on_click=click_button)
-if button:
+    
+
+if st.session_state.clicked:
     with st.spinner(text="In progress..."):
         time.sleep(random.randint(1, 3))
     st.write("Uploaded!")
 
-st.divider()
-
-if st.session_state.clicked:
+    st.divider()
 
     if st.button("Scientific review"):
         with st.spinner(text="In progress..."):
