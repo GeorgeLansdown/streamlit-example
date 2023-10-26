@@ -18,5 +18,5 @@ In the meantime, below is an example of what you can do with just a few lines of
 
 text = st.text_input("Enter PDF URL")
 
-st.button("Go!", key=None, help=None, on_click=None, args=None, kwargs=None, *, type="secondary", disabled=False, use_container_width=False)
+st.button("Go!")
 
