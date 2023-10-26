@@ -4,6 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import requests
+import re
 
 def filter_output(output):
     return " ".join(re.findall(r"content\":\" ([^\"]*)", text))
