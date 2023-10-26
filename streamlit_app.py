@@ -9,8 +9,6 @@ import time
 import random
 
 st.set_page_config(layout="wide")
-for key in st.session_state.keys():
-    del st.session_state[key]
 
 
 st.title("""
@@ -30,8 +28,6 @@ if button:
     with st.spinner(text="In progress..."):
         time.sleep(random.randint(1, 3))
     st.write("Uploaded!")
-
-
 
 st.divider()
 
