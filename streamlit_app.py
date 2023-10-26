@@ -7,7 +7,7 @@ import requests
 import re
 
 def filter_output(output):
-    return " ".join(re.findall(r"content\":\" ([^\"]*)", text))
+    return " ".join(re.findall(r"content\":\" ([^\"]*)", output))
 
 def send_prompt(prompt):
     headers = {
