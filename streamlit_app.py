@@ -10,12 +10,12 @@ import random
 
 st.set_page_config(layout="wide")
 
+st.title("""
+# Welcome to CanonPDF!
+""")
+
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
-
-"""
-# Welcome to CanonPDF!
-"""
 
 text = st.text_input("Enter PDF URL")
 
