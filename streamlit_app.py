@@ -9,8 +9,10 @@ import time
 import random
 
 st.set_page_config(layout="wide")
-st.session_state.clicked = False
 
+if 'clicked' not in st.session_state:
+    st.session_state.clicked = False
+    
 
 def click_button():
     with st.spinner(text="In progress..."):
