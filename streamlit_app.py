@@ -21,12 +21,12 @@ st.title("""
 Welcome to CanonPDF!
 """)
 
-text = st.text_input("Enter PDF URL")
+text = st.text_input("Enter PDF URL", value="https://arxiv.org/pdf/2106.13292.pdf")
 
 def click_button():
     st.session_state.clicked = True
 
-button = st.button("Upload!", on_click=click_button, value="https://arxiv.org/pdf/2106.13292.pdf")
+button = st.button("Upload!", on_click=click_button)
     
 
 if st.session_state.clicked:
