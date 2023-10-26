@@ -23,13 +23,13 @@ if 'clicked' not in st.session_state:
 text = st.text_input("Enter PDF URL")
 
 def click_button():
-    with st.spinner(text="In progress..."):
-            time.sleep(random.randint(1, 3))
-    st.write("Uploaded!")
     st.session_state.clicked = True
 
 button = st.button("Upload!", on_click=click_button)
-
+if button:
+    with st.spinner(text="In progress..."):
+        time.sleep(random.randint(1, 3))
+    st.write("Uploaded!")
 
 
 
