@@ -26,7 +26,7 @@ text = st.text_input("Enter PDF URL")
 def click_button():
     st.session_state.clicked = True
 
-button = st.button("Upload!", on_click=click_button)
+button = st.button("Upload!", on_click=click_button, value="https://arxiv.org/pdf/2106.13292.pdf")
     
 
 if st.session_state.clicked:
