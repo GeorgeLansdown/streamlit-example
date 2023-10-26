@@ -9,6 +9,7 @@ import time
 import random
 
 st.set_page_config(layout="wide")
+first_time = True
 
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
@@ -26,9 +27,11 @@ button = st.button("Upload!", on_click=click_button)
     
 
 if st.session_state.clicked:
-    with st.spinner(text="In progress..."):
-        time.sleep(random.randint(1, 3))
-    st.write("Uploaded!")
+    if first_time:
+        with st.spinner(text="In progress..."):
+            time.sleep(random.randint(1, 3))
+        st.write("Uploaded!")
+        first_time = False
 
     st.divider()
 
