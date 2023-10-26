@@ -18,7 +18,7 @@ if 'first' not in st.session_state:
     st.session_state.first = True
 
 
-st.image("Canon-logo.jpg", width=120)
+st.image("Canon-logo.jpg", width=250)
 
 st.title("""
 Welcome to CanonPDF!
