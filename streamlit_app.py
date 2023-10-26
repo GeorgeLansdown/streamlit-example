@@ -17,6 +17,9 @@ if 'clicked' not in st.session_state:
 if 'first' not in st.session_state:
     st.session_state.first = True
 
+
+st.image("logo_1956.png")
+
 st.title("""
 Welcome to CanonPDF!
 """)
@@ -32,7 +35,7 @@ button = st.button("Upload!", on_click=click_button)
 if st.session_state.clicked:
     if st.session_state.first:
         with st.spinner(text="In progress..."):
-            time.sleep(random.randint(1, 3))
+            time.sleep(random.randint(3, 5))
         st.write("Uploaded!")
         st.session_state.first = False
 
