@@ -5,21 +5,6 @@ import pandas as pd
 import streamlit as st
 import requests
 
-"""
-# Welcome to CanonPDF!
-"""
-
-
-text = st.text_input("Enter PDF URL")
-
-if st.button("Go!"):
-    st.write(send_prompt("Summarise the main points of the article in a list format:"))
-
-
-
-
-
-
 def send_prompt(prompt):
     headers = {
         'authority': 'api.popai.pro',
@@ -53,3 +38,15 @@ def send_prompt(prompt):
 
     response = requests.post('https://api.popai.pro/api/v1/chat/send', headers=headers, json=json_data)
     return response.text
+
+"""
+# Welcome to CanonPDF!
+"""
+
+text = st.text_input("Enter PDF URL")
+
+if st.button("Go!"):
+    st.write(send_prompt("Summarise the main points of the article in a list format:"))
+
+
+
